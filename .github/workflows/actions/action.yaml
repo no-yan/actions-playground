@@ -5,11 +5,11 @@ on:
   workflow_call:
     inputs:
       username:
-        required: true
+        # required: true
         type: string
     secrets:
       token:
-        required: true
+        # required: true
 
 jobs:
   example_job:

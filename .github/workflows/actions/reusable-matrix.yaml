@@ -1,0 +1,12 @@
+on:
+  workflow_call:
+#     inputs:
+        
+jobs:
+  reusable_workflow_job:
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - echo echo hello

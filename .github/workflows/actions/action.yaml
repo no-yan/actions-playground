@@ -1,12 +1,22 @@
+name: Reusable workflow example
+description: Reusable
+
 on:
   workflow_call:
-#     inputs:
-        
+    inputs:
+      username:
+        required: true
+        type: string
+    secrets:
+      token:
+        required: true
+
 jobs:
-  reusable_workflow_job:
-    strategy:
-      matrix:
-        os: [macos-latest, ubuntu-latest, windows-latest]
-    runs-on: ${{ matrix.os }}
+  example_job:
+    name: Pass input and secrets to my-action
+    runs-on: ubuntu-latest
     steps:
-      - echo echo hello
+      - uses: ./.github/workflows/my-action
+        with:
+          username: ${{ inputs.username }}
+          token: ${{ secrets.token }}

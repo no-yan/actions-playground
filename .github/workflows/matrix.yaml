@@ -14,4 +14,7 @@ jobs:
     steps:
     - run: echo ${{ matrix.node-version}}
     - run: echo ${{ matrix.os }}
-    - uses: ./.github/workflows/actions/reusable-matrix.yaml
+    - name: Checkout
+      uses: actions/checkout@master
+    - name: Matrix on Matrix
+      uses: ./.github/workflows/actions/reusable-matrix.yaml

@@ -14,4 +14,4 @@ jobs:
     steps:
     - run: echo ${{ matrix.node-version}}
     - run: echo ${{ matrix.os }}
-    - uses: ./actions/reusable-workflow.yaml
+    - uses: ./.github/workflows/actions/reusable-matrix.yaml

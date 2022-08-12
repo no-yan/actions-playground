@@ -18,3 +18,6 @@ jobs:
       uses: actions/checkout@master
     - name: Matrix on Matrix
       uses: ./.github/workflows/actions
+      with:
+        inputs:
+          username: ${{ matrix.os }}

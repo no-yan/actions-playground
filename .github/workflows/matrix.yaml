@@ -17,4 +17,4 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
     - name: Matrix on Matrix
-      uses: ./.github/workflows/actions/reusable-matrix.yaml
+      uses: ./.github/workflows/actions/action.yaml

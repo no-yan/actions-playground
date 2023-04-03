@@ -1,7 +1,8 @@
 on:
   push:
     branches:
-    - main
+      - main
+    tags: "*"
 
 jobs:
   my_job:
@@ -12,12 +13,11 @@ jobs:
     name: deploy to
     runs-on: ${{ matrix.os }}
     steps:
-    - run: echo ${{ matrix.node-version}}
-    - run: echo ${{ matrix.os }}
-    - name: Checkout
-      uses: actions/checkout@master
-    - name: Matrix on Matrix
-      uses: ./.github/workflows/actions
-      with:
-        username: node_modules
-
+      - run: echo ${{ matrix.node-version}}
+      - run: echo ${{ matrix.os }}
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Matrix on Matrix
+        uses: ./.github/workflows/actions
+        with:
+          username: node_modules
